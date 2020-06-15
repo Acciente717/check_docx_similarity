@@ -84,9 +84,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Check pairwise similarities of .docx files.')
     parser.add_argument('--dir', help='the directory containing .docx files', required=True)
     parser.add_argument('--out', help='the output file path', required=True)
-    parser.add_argument('--hash-width', help='the word length of a hashing block (default 8)', default=8)
-    parser.add_argument('--hash-step', help='the word step between hashing block (default 1)', default=1)
-    parser.add_argument('--sample-cnt', help='sample count (default 1000)', default=1000)
+    parser.add_argument('--hash-width', help='the word length of a hashing block (default 8)', type=int, default=8)
+    parser.add_argument('--hash-step', help='the word step between hashing block (default 1)', type=int, default=1)
+    parser.add_argument('--sample-cnt', help='sample count (default 1000)', type=int, default=1000)
 
     args = parser.parse_args()
     args.thu = thulac.thulac(seg_only=True)
